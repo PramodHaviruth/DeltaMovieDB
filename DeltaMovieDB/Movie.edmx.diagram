@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="46245e3cd55f46dabf200725fff886b7" Name="Diagram1" ZoomLevel="83">
+        <EntityTypeShape EntityType="DeltaMovieDBModel.Actor" Width="1.5" PointX="3" PointY="5.125" />
+        <EntityTypeShape EntityType="DeltaMovieDBModel.ActorMovie" Width="1.5" PointX="5.25" PointY="1.25" />
+        <EntityTypeShape EntityType="DeltaMovieDBModel.Movie" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="DeltaMovieDBModel.Producer" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="DeltaMovieDBModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" />
+        <AssociationConnector Association="DeltaMovieDBModel.FK_ActorMovie_Actor" />
+        <AssociationConnector Association="DeltaMovieDBModel.FK_ActorMovie_Movie" />
+        <AssociationConnector Association="DeltaMovieDBModel.FK_Movie_Producer" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

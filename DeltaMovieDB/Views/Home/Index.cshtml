@@ -1,0 +1,62 @@
+﻿
+<div class="row" ng-controller="dmdbMovieListController">
+    <div class="col-md-12">
+        <center>
+            <div id="AddNewMovieBtn" class="AddNewMovieBtn">
+                <a href="/Home/AddNewMovie">Add New Movie</a>
+            </div>
+            <br />
+            <div id="MoviesList" class="MoviesList">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                Poster
+                            </th>
+                            <th>
+                                Name
+                            </th>
+                            <th>
+                                Year of Release
+                            </th>
+                            <th>
+                                Plot
+                            </th>
+                            <th>
+                                Actors
+                            </th>
+                            <th>
+                                Producer
+                            </th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="movie in movieList">
+                        <td>
+                            <img ng-src="{{movie.Poster}}" style="width: 100px; height: 100px;" />
+                        </td>
+                        <td>
+                            {{movie.MovieName}}
+                        </td>
+                        <td>
+                            {{movie.YearOfRelease}}
+                        </td>
+                        <td>
+                            {{movie.Plot}}
+                        </td>
+                        <td>
+                            <div class="ActorName" ng-repeat="Actors in movie.ActorsList">
+                                {{Actors.Name}}
+                            </div>
+                        </td>
+                        <td>
+                            {{movie.ProducerName}}
+                        </td>
+                        <th>
+                            <input type="button" value="Edit" ng-click="updateMovie(movie);" />
+                        </th>
+                    </tr>
+                </table>
+            </div>
+        </center>
+    </div>
+</div>

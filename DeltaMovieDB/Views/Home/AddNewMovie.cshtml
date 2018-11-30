@@ -1,0 +1,152 @@
+﻿
+<div class="row" ng-controller="dmdbAddNewMovieController">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <center>
+            <h2>Add Movie Details</h2>
+            <br />
+            <div id="AddNewMovieBlock" class="AddNewMovieBlock">
+                <br />
+                <form name="AddNewMovieForm" ng-submit="addNewMovie();">
+                    <table>
+                        <tr>
+                            <th>Poster:</th>
+                            <td>
+                                <img ng-src="{{PosterImage}}" alt="Poster" name="Image_Poster" class="PosterImage">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <td>
+                                <input type="file" fileread="Movie.Poster" name="Input_Poster" accept="image/*"
+                                       onchange="angular.element(this).scope().imageUpload(event)" required />
+                            </td>
+                        </tr>
+                        <tr><td colspan="2"><br /></td></tr>
+                        <tr>
+                            <th>Name:</th>
+                            <td><input type="text" ng-model="Movie.Name" name="Input_MovieName" class="form-control" required /></td>
+                        </tr>
+                        <tr><td colspan="2"><br /></td></tr>
+                        <tr>
+                            <th>Year Of Release:</th>
+                            <td><input type="text" 
+                                       onKeyPress="AllowNumbersOnly(event);"
+                                       ng-model="Movie.YearOfRelease" 
+                                       class="form-control"
+                                       min="1950"
+                                       max="{{CurYear}}"
+                                       maxlength="4"
+                                       required /></td>
+                        </tr>
+                        <tr><td colspan="2"><br /></td></tr>
+                        <tr>
+                            <th>Producer:</th>
+                            <td>
+                                <select name="Input_Producer" 
+                                        class="form-control"
+                                        ng-model="Movie.Producer"
+                                        ng-options="producer.Id as producer.Name+' ('+producer.Sex+')' for producer in producersList" 
+                                        required>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="button" value="Add"  ng-click="OpenProducerModal();" name="Input_NewMovieBtn" class="AddNewPersonBtn" />
+                            </td>
+                        </tr>
+                        <tr><td colspan="2"><br /></td></tr>
+                        <tr>
+                            <th>Plot:</th>
+                            <td><textarea ng-model="Movie.Plot" name="Input_Plot" class="form-control" required></textarea></td>
+                        </tr>
+                        <tr><td colspan="2"><br /></td></tr>
+                        <tr>
+                            <th>Actors:</th>
+                            <td>
+                                <select name="Input_Actors" 
+                                        class="form-control" 
+                                        ng-model="Movie.ActorsList" 
+                                        ng-options="actor.Id as actor.Name+' ('+actor.Sex+')' for actor in actorsList" 
+                                        multiple required>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="button" value="Add"  ng-click="OpenActorModal();" name="Input_NewMovieBtn" class="AddNewPersonBtn" />
+                            </td>
+                        </tr>
+                        <tr><td colspan="2"><br /></td></tr>
+                        <tr>
+                            <th colspan="2">
+                                <center>
+                                    <input type="submit" value="Add" name="Input_NewMovieBtn" class="SubmitNewMovieBtn" />
+                                </center>
+                            </th>
+                        </tr>
+                    </table>
+                </form>
+                <br />
+            </div>
+        </center>
+
+
+    </div>
+    <div class="col-md-2"></div>
+
+    <div id="AddPersonBlock" class="AddPersonBlock">
+        <center>
+            <div class="modal fade" id="AddPersonModal" role="dialog">
+                <div class="modal-dialog AddPersonModal">
+                    <!-- Modal content-->
+                    
+                    <div class="modal-content">
+                        <form name="AddPersonForm" ng-submit="AddNewPerson();">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">Add {{PersonType}}</h4>
+                            </div>
+                            <div class="modal-body">
+                                <table>
+                                    <tr>
+                                        <th>Name:</th>
+                                        <td><input type="text" ng-model="Person.Name" name="Input_PersonName" class="form-control" required /></td>
+                                    </tr>
+                                    <tr><td colspan="2"><br /></td></tr>
+                                    <tr>
+                                        <th>Sex:</th>
+                                        <td>
+                                            <select name="Input_PersonGender" class="form-control" ng-model="Person.Sex" required>
+                                                <option value="Male" selected>Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="2"><br /></td></tr>
+                                    <tr>
+                                        <th>Date Of Birth:</th>
+                                        <td>
+                                            <input type="date" id="PersonDOB" ng-model="Person.DOB" name="Input_PersonDOB" class="form-control" required />
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="2"><br /></td></tr>
+                                    <tr>
+                                        <th>Bio:</th>
+                                        <td>
+                                            <textarea ng-model="Person.Bio" name="Input_PersonBio" class="form-control" required></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr><td colspan="2"><br /></td></tr>
+                                </table>
+
+                            </div>
+                            <div class="modal-footer">
+                                <input type="submit" value="Add" class="btn btn-default">
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </center>
+    </div>
+</div>
+

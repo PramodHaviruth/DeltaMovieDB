@@ -1,0 +1,110 @@
+﻿body {
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.MoviesList table{
+    border: 1px solid black;
+}
+
+.MoviesList thead{
+    background-color: khaki;
+}
+
+.MoviesList tr {
+    border: 1px solid black;
+}
+
+.MoviesList th, td {
+    padding: 10px 5px;
+    border: 1px solid black;
+    width: 180px;
+    height: auto;
+    text-align: center;
+}
+
+
+.AddNewMovieBtn a {
+    padding: 15px;
+    background-color: #6495ed;
+    color: white;
+    border-radius: 6px;
+}
+
+.AddNewMovieBtn a:hover {
+    background-color: #8FB2F1;
+    text-decoration: none;
+}
+
+.AddNewMovieBlock {
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+    .AddNewMovieBlock input[type=text], input[type=number], textarea, select {
+        padding: 5px;
+        width: 800px
+    }
+
+    .AddNewMovieBlock td {
+        padding: 5px 20px;
+        border: none;
+    }
+
+.SubmitNewMovieBtn {
+    padding: 8px 30px;
+    background-color: #6495ed;
+    color: white;
+    border-radius: 6px;
+    border: none;
+}
+
+.SubmitNewMovieBtn:hover {
+    background-color: #8FB2F1;
+}
+
+.PosterImage{
+    width: 150px;
+    height: auto;
+}
+
+.AddNewPersonBtn {
+    padding: 8px 15px;
+    background-color: #6495ed;
+    color: white;
+    border-radius: 6px;
+    border: none;
+}
+
+.AddPersonModal{
+    left: 0;
+}
+
+.AddPersonBlock td {
+    border: none;
+}
+
+.ActorName{
+    text-wrap:normal;
+}
