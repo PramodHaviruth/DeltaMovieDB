@@ -1,5 +1,6 @@
 To run the DeltaMovieDB project please download this project, 
 in the downloaded folder you will see a file DeltaMovieDB.sln open it.
+and run it on any browser.
 
 To create the database for this project go to DatabaseScripts folder
 
